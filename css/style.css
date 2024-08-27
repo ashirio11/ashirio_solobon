@@ -192,7 +192,7 @@ body {
 @media screen and (min-width:768px) {
   .concept {
     padding-top: 144px;
-    padding-bottom: 149px;
+    padding-bottom: 145px;
   }
 }
 
@@ -309,7 +309,7 @@ body {
 
 @media screen and (min-width:768px) {
   .feature__title {
-    padding-bottom: 6px;
+    padding-bottom: 7px;
   }
 }
 
@@ -327,7 +327,7 @@ body {
 }
 @media screen and (min-width:768px) {
   .feature__boxes {
-    margin-top: 66px;
+    margin-top: 68px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;

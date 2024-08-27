@@ -215,7 +215,7 @@ $breakpoints:(
 
     @include mq(pc){
       padding-top: 144px;
-      padding-bottom: 149px;
+      padding-bottom: 145px;
     }
   }
 
@@ -323,7 +323,7 @@ $breakpoints:(
 
 .feature__title{
   @include mq(pc){
-    padding-bottom: 6px;
+    padding-bottom: 7px;
   }
 }
 
@@ -335,7 +335,7 @@ $breakpoints:(
   margin-top: 46px;
 
   @include mq(pc){
-    margin-top: 66px;
+    margin-top: 68px;
     flex-direction: row;
     gap: 90px;
   }
