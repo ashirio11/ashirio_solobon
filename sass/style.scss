@@ -414,7 +414,7 @@ $breakpoints:(
 
 .products{
     padding-top: 85px;
-    padding-bottom: 96px;
+    padding-bottom: 85px;
 
     @include mq(pc){
         padding-top: 144px;
@@ -492,29 +492,55 @@ $breakpoints:(
 
 .news{
     padding-bottom: 96px;
+
+    @include mq(pc){
+        padding-bottom: 160px;
+    }
 }
 
 .news__cards{
-    margin: 46px 15px 42px 15px;
-    position: fixed;
+    margin: 50px 15px 42px 15px;
+    display: flex;
     flex-direction: column;
     gap: 28px;
+
+    @include mq(pc){
+        gap: 24px;
+        margin: 69px 120px 42px 120px;
+    }
 }
 
 .news__card{
     border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 28px;
+
+    @include mq(pc){
+        display: flex;
+        gap: 40px;
+        padding-bottom: 24px;
+    }
 }
 
 .news__card-image{
 
     img{
         height: 212.31px;
+
+        @include mq(pc){
+            height: 160px;
+        }
     }
 }
 
 .news__card-text{
     margin-top: 16px;
     text-align: left;
+    width: 345px;
+
+    @include mq(pc){
+        margin-top: 0;
+        width: 736px;
+    }
 }
 
 .news__card-date{
@@ -525,11 +551,80 @@ $breakpoints:(
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
+
+    @include mq(pc){
+        margin-top: 16px;
+        font-size: 18px;
+    }
 }
 
 .news__card-sub{
     font-size: 14px;
     font-weight: 300;
     margin-top: 14px;
+    color: #888;
+
+    @include mq(pc){
+        margin-top: 10px;
+    }
 }
 
+// consept2セクション
+
+.concept2{
+    padding-bottom: 85px;
+
+    @include mq(pc){
+        margin-bottom: 144px;
+    }
+}
+
+.concept2__content{
+
+    @include mq(pc){
+        position: relative;
+    }
+}
+
+.concept2__image{
+    @include mq(pc){
+    text-align: right;
+    }
+
+    img{
+       height: 230px;
+        @include mq(pc){
+            height: 400px;
+        }
+    }
+}
+
+.concept2__text{
+    @include mq(pc){
+        position: absolute;
+        width: 520px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.concept2__main{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    @include mq(pc){
+        margin-top: 0;
+        font-size: 28px;
+    }
+}
+
+.concept2__subtitle{
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 22px;
+
+    @include mq(pc){
+        margin-top: 36px;
+        font-size: 16px;
+    }
+}
