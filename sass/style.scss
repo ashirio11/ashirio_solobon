@@ -359,6 +359,8 @@ $breakpoints:(
   padding-bottom: 26px;
 }
 
+// middleセクション
+
 .middle{
     position: relative;
 }
@@ -407,3 +409,127 @@ $breakpoints:(
         width: 600px;
     }
 }
+
+// productsセクション
+
+.products{
+    padding-top: 85px;
+    padding-bottom: 96px;
+
+    @include mq(pc){
+        padding-top: 144px;
+        padding-bottom: 144px;
+    }
+}
+
+.products__boxes{
+    padding: 48px 56px 42px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mq(pc){
+        padding: 66px 170px 44px 170px;
+        flex-direction: row;
+        gap: 80px;
+    }
+}
+
+.products__text{
+    width: 263px;
+
+    @include mq(pc){
+        width: 260px;
+    }
+}
+
+
+.products__block{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+
+    @include mq(pc){
+        margin-top: 19px;
+    }
+}
+
+.products__image{
+
+    img{
+        width: 263px;
+
+        @include mq(pc){
+            width: 300px;
+        }
+    }
+}
+
+.products__price{
+    margin-top: 10px;
+    color: #989898;
+}
+
+
+.blue-button{
+
+        a{
+            color: #3EA1D1;
+            display: flex;
+            justify-content: center;
+            width: 158px;
+            height: 48px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 14px;
+            font-weight: 300;
+            border: 1px solid currentColor;
+        }
+}
+
+.news{
+    padding-bottom: 96px;
+}
+
+.news__cards{
+    margin: 46px 15px 42px 15px;
+    position: fixed;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.news__card{
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.news__card-image{
+
+    img{
+        height: 212.31px;
+    }
+}
+
+.news__card-text{
+    margin-top: 16px;
+    text-align: left;
+}
+
+.news__card-date{
+    font-size: 14px;
+}
+
+.news__card-main{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.news__card-sub{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 14px;
+}
+
