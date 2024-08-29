@@ -475,6 +475,7 @@ $breakpoints:(
 .blue-button{
 
         a{
+            background-color: #fff;
             color: #3EA1D1;
             display: flex;
             justify-content: center;
@@ -572,10 +573,11 @@ $breakpoints:(
 // consept2セクション
 
 .concept2{
-    padding-bottom: 85px;
+    padding-bottom: 97px;
+
 
     @include mq(pc){
-        margin-bottom: 144px;
+        margin-bottom: 75px;
     }
 }
 
@@ -628,3 +630,248 @@ $breakpoints:(
         font-size: 16px;
     }
 }
+
+.contact{
+  padding-top: 46px;
+  padding-bottom: 56px;
+  background: url(../img/contact_bg-sp.png) no-repeat center center / cover;
+
+  @include mq(pc){
+    background: url(../img/contact_bg.png) no-repeat center center / cover;
+    padding-top: 67px;
+    padding-bottom: 80px;
+  }
+}
+
+.contact__form{
+  margin-top: 56px;
+
+  @include mq(pc){
+    margin-top: 66px;
+  }
+}
+
+.contact__items{
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include mq(pc){
+    margin-top: 20px;
+  }
+}
+
+.contact__inner{
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(pc){
+    max-width: calc(510px + 40px * 2);
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.contact__text{
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+
+  .absolute{
+    color: #E7728E;
+  }
+}
+
+.contact-control{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  @include mq(pc){
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.contact-control__head{
+  @include mq(pc){
+    width: 180px;
+    flex-shrink: 0;
+  }
+}
+
+.contact-control__input{
+  @include mq(pc){
+    flex-grow: 1;
+  }
+}
+
+
+.contact__head{
+  color: $color-key1;
+  padding-bottom: 7px;
+
+  @include mq(pc){
+    padding-bottom: 7px;
+  }
+}
+
+.form-label{
+  display: inline-flex;
+  background: rgba($color-key1, 0.7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 16px;
+
+  @include mq(pc){
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-inline: 4px;
+    clip-path: polygon(0% 0%, 97% 0, 100% 50%, 97% 100%, 0% 100%);
+  }
+}
+
+.form__absolute{
+  font-size: 10px;
+  font-weight: 600;
+  color: #E7728E;
+  @include mq(pc){
+    font-size: 12px;
+  }
+}
+.form-text{
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background:  #FFF;
+  box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
+}
+
+.form-textarea{
+  width: 100%;
+  height: 122px;
+  background:  #FFF;
+  box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
+  resize: vertical;
+  font-size: 16px;
+  border: 0;
+}
+
+.contact-control__radios{
+  display: flex;
+  align-items: center;
+}
+
+.form-radio{
+  position: relative;
+}
+
+.form-radio__input{
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+
+  &:checked + .form-radio__text{
+    background-color:$color-key1;
+    color: #fff;
+  }
+
+
+
+}
+
+.form-radio__text{
+  font-size: 16px;
+  letter-spacing: 0.026px;
+  color: $color-key1;
+  border: 1px solid #FFF;
+  background:  #FFF;
+  width: 80px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.contact__submit{
+  margin-top: 23px;
+
+  @include mq(pc){
+    margin-top: 44px;
+  }
+}
+
+.contact__privacy{
+  text-align: center;
+}
+
+.contact__footer{
+  margin-top: 28px;
+  @include mq(pc){
+    margin-top: 32px;
+  }
+}
+
+.form-checkbox{
+  position: relative;
+}
+
+.form-checkbox__inner{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+
+  &:checked + .form-checkbox__text{
+    &::after{
+      opacity: 1;
+    }
+  }
+}
+
+.form-checkbox__text{
+  font-size: 16px;
+
+  a{
+    text-decoration-line: underline;
+    padding-left: 30px;
+    color: $color-key1;
+  }
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    margin-block: auto;
+  }
+
+  &::before{
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 1px border $color-key1;
+  }
+
+  &::after{
+    opacity: 0;
+    width: 19.414px;
+    height: 14.621px;
+    background: url(../img/icon.png) no-repeat center center / contain;
+    left: 1.29px;
+  }
+
+}
+
+

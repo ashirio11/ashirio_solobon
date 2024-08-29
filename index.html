@@ -194,6 +194,76 @@
          </div>
     </section>
 
+
+   <section class="contact">
+    <div class="contact__inner">
+        <h2 class="title contact__head">Contact</h2>
+        <form action="" class="contact__form">
+            <p class="contact__text"><span class="absolute">＊</span>は入力必須項目です</p>
+            <div class="contact__items">
+
+                <div class="contact__item contact-control">
+                    <div class="contact-control__head">
+                        <label for="" class="form-label">お名前<span class="form__absolute">＊</span></label>
+                    </div>
+                    <div class="contact-control__input">
+                        <input type="text" name="your-name" id="your-name" class="form-text">
+                    </div>
+                </div>
+
+                <div class="contact__item contact-control">
+                    <div class="contact-control__head">
+                        <label for="" class="form-label">メールアドレス<span class="form__absolute">＊</span></label>
+                    </div>
+                    <div class="contact-control__input">
+                        <input type="email" name="your-email" id="your-emial" class="form-text">
+                    </div>
+                </div>
+
+                <div class="contact__item contact-control">
+                    <div class="contact-control__head">
+                        <span class="form-label">法人/個人の選択<span class="form__absolute">＊</span></span>
+                    </div>
+                    <div class="contact-control__input">
+                        <div class="contact-control__radios">
+                        <label class="form-radio">
+                            <input type="radio" name="your-type" class="form-radio__input" checked>
+                            <span class="form-radio__text" >法人</span>
+                        </label>
+                        <label class="form-radio">
+                            <input type="radio" name="your-type" class="form-radio__input">
+                            <span class="form-radio__text">個人</span>
+                        </label>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="contact__item contact-control">
+                    <div class="contact-control__head">
+                        <label for="" class="form-label">お問い合わせ内容<span class="form__absolute">＊</span></label>
+                    </div>
+                    <div class="contact-control__input">
+                       <textarea name="your-message" id="" class="form-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact__footer">
+                <div class="contact__privacy">
+                    <label class="form-checkbox">
+                        <input type="checkbox" name="your-privacy" id="" class="form-checkbox__inner">
+                        <span class="form-checkbox__text"> <a href="" target="_blank">プライバシーポリシー</a>に同意します。</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="contact__submit blue-button">
+                <a href="">送信</a>
+            </div>
+        </form>
+    </div>
+   </section>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./js/script.js"></script>
