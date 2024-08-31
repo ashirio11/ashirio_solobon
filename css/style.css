@@ -19,6 +19,8 @@ body {
   background-color: #FAFAFA;
   font-family: "Noto Serif JP", serif;
   line-height: 1.7;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @media screen and (max-width:767px) {
@@ -34,6 +36,10 @@ body {
 }
 
 .header__inner {
+  position: fixed; /* ヘッダーを固定する */
+  top: 0; /* 上部から配置の基準位置を決める */
+  height: 60px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,11 +47,17 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 19px 15px;
+  background-color: #fff;
+  z-index: 100;
 }
 @media screen and (min-width:768px) {
   .header__inner {
-    padding: 22px 40px 21px 40px;
-    max-width: 1280px;
+    height: 68px;
+  }
+}
+@media screen and (min-width:768px) {
+  .header__inner {
+    padding: 22px 38px 21px 40px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -53,6 +65,7 @@ body {
 
 .header__logo a img {
   width: 120px;
+  height: 22px;
   display: block;
 }
 .header__nav {
@@ -95,16 +108,16 @@ body {
 }
 .drawer-icon.is-checked .drawer-icon__bar:nth-of-type(1) {
   top: 10px;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 .drawer-icon.is-checked .drawer-icon__bar:nth-of-type(2) {
   display: none;
 }
 .drawer-icon.is-checked .drawer-icon__bar:nth-of-type(3) {
   top: 10px;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .drawer-icon__bar {
@@ -115,6 +128,10 @@ body {
   height: 2px;
   border-radius: 6px;
   background: #3EA1D1;
+  -webkit-transition: top 0.3s linear, -webkit-transform 0.3s linear;
+  transition: top 0.3s linear, -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear, top 0.3s linear;
+  transition: transform 0.3s linear, top 0.3s linear, -webkit-transform 0.3s linear;
 }
 .drawer-icon__bar:nth-of-type(2) {
   top: 8px;
@@ -123,12 +140,56 @@ body {
   top: 16px;
 }
 
+.drawer-content {
+  position: fixed;
+  width: 270px;
+  height: 618px;
+  top: 60px;
+  right: 0;
+  background: #3EA1D1;
+  z-index: 50;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  overflow-x: hidden;
+}
+.drawer-content.is-checked {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.drawer-content__menu {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  padding-top: 40px;
+  padding-right: 15px;
+}
+
+.drawer-content__link {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .mv {
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 60px;
 }
 @media screen and (min-width:768px) {
   .mv {
+    padding-top: 70px;
     padding-right: 40px;
     padding-left: 0;
   }
@@ -168,14 +229,14 @@ body {
   }
 }
 
-.mv__title {
+.mv__main {
   text-align: left;
   margin-top: 30px;
   font-size: 26px;
   font-weight: 600;
 }
 @media screen and (min-width:768px) {
-  .mv__title {
+  .mv__main {
     margin-top: 0;
   }
 }
@@ -186,13 +247,11 @@ body {
 }
 
 .concept {
-  padding-top: 80px;
-  padding-bottom: 85px;
+  padding-top: 85px;
 }
 @media screen and (min-width:768px) {
   .concept {
-    padding-top: 144px;
-    padding-bottom: 145px;
+    padding-top: 145px;
   }
 }
 
@@ -216,14 +275,14 @@ body {
 .title {
   font-size: 30px;
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 14px;
   text-align: center;
   font-weight: 600;
 }
 @media screen and (min-width:768px) {
   .title {
     font-size: 40px;
-    padding-bottom: 9px;
+    padding-bottom: 7px;
   }
 }
 .title::before {
@@ -245,7 +304,7 @@ body {
 @media screen and (min-width:768px) {
   .concept__image {
     text-align: left;
-    margin-top: 68px;
+    margin-top: 70px;
   }
 }
 .concept__image img {
@@ -288,10 +347,12 @@ body {
 }
 
 .feature {
-  padding-bottom: 96px;
+  padding-top: 83px;
+  padding-bottom: 98px;
 }
 @media screen and (min-width:768px) {
   .feature {
+    padding-top: 144px;
     padding-bottom: 160px;
   }
 }
@@ -323,7 +384,7 @@ body {
           flex-direction: column;
   gap: 50px;
   text-align: center;
-  margin-top: 46px;
+  margin-top: 50px;
 }
 @media screen and (min-width:768px) {
   .feature__boxes {
@@ -348,8 +409,8 @@ body {
 .feature__text {
   text-align: center;
   font-weight: 600;
-  padding-top: 26px;
-  padding-bottom: 26px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .middle {
@@ -404,13 +465,11 @@ body {
 }
 
 .products {
-  padding-top: 85px;
-  padding-bottom: 85px;
+  padding-top: 87px;
 }
 @media screen and (min-width:768px) {
   .products {
-    padding-top: 144px;
-    padding-bottom: 144px;
+    padding-top: 149px;
   }
 }
 
@@ -423,7 +482,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 40px;
+  gap: 41px;
 }
 @media screen and (min-width:768px) {
   .products__boxes {
@@ -489,13 +548,21 @@ body {
   font-size: 14px;
   font-weight: 300;
   border: 1px solid currentColor;
+  -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.blue-button a:hover {
+  background-color: #3EA1D1;
+  color: #fff;
 }
 
 .news {
+  padding-top: 85px;
   padding-bottom: 96px;
 }
 @media screen and (min-width:768px) {
   .news {
+    padding-top: 144px;
     padding-bottom: 160px;
   }
 }
@@ -582,11 +649,11 @@ body {
 }
 
 .concept2 {
-  padding-bottom: 97px;
+  padding-bottom: 96px;
 }
 @media screen and (min-width:768px) {
   .concept2 {
-    margin-bottom: 75px;
+    margin-bottom: 65px;
   }
 }
 
@@ -646,23 +713,23 @@ body {
 
 .contact {
   padding-top: 46px;
-  padding-bottom: 56px;
+  padding-bottom: 40px;
   background: url(../img/contact_bg-sp.png) no-repeat center center/cover;
 }
 @media screen and (min-width:768px) {
   .contact {
     background: url(../img/contact_bg.png) no-repeat center center/cover;
-    padding-top: 67px;
-    padding-bottom: 80px;
+    padding-top: 65px;
+    padding-bottom: 63px;
   }
 }
 
 .contact__form {
-  margin-top: 56px;
+  margin-top: 50px;
 }
 @media screen and (min-width:768px) {
   .contact__form {
-    margin-top: 66px;
+    margin-top: 70px;
   }
 }
 
@@ -744,7 +811,7 @@ body {
 
 .contact__head {
   color: #3EA1D1;
-  padding-bottom: 7px;
+  padding-bottom: 13px;
 }
 @media screen and (min-width:768px) {
   .contact__head {
@@ -851,6 +918,7 @@ body {
 
 .contact__submit {
   margin-top: 23px;
+  padding-bottom: 17px;
 }
 @media screen and (min-width:768px) {
   .contact__submit {
@@ -912,4 +980,81 @@ body {
   height: 14.621px;
   background: url(../img/icon.png) no-repeat center center/contain;
   left: 1.29px;
+}
+
+.footer {
+  padding-top: 35px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: #F7F7F7;
+}
+.footer img {
+  width: 120px;
+  height: 22px;
+}
+
+.footer__text {
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 300;
+}
+@media screen and (min-width:768px) {
+  .footer__text {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 32px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.footer__description {
+  margin-top: 10px;
+}
+@media screen and (min-width:768px) {
+  .footer__description {
+    margin-top: 0;
+  }
+}
+
+.footer__sns {
+  margin-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width:768px) {
+  .footer__sns {
+    margin-top: 17px;
+  }
+}
+
+.footer__icon {
+  width: 18px;
+  height: 19.2px;
+}
+
+.footer__small {
+  margin-top: 26px;
+}
+@media screen and (min-width:768px) {
+  .footer__small {
+    margin-top: 30px;
+  }
+}
+
+.footer__copyright {
+  color: #888;
+  font-size: 12px;
 }

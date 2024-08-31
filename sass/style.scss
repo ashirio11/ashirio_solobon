@@ -41,6 +41,8 @@ $breakpoints:(
     background-color: $background-color-base;
     font-family: $font-family-ja;
     line-height: $line-height-base;
+    overflow-x:hidden;
+    width: 100%;
   }
 
   .hidden-sp{
@@ -54,15 +56,23 @@ $breakpoints:(
     }
   }
 
-
   .header__inner{
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 19px 15px;
+    background-color: #fff ;
+    z-index: 100;
 
     @include mq(pc){
-      padding: 22px 40px 21px 40px;
-      max-width: 1280px;
+      height: 68px;
+    }
+
+    @include mq(pc){
+      padding: 22px 38px 21px 40px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -72,6 +82,7 @@ $breakpoints:(
       a{
         img{
           width:120px;
+          height: 22px;
           display: block;
 
           @include mq(pc){
@@ -116,7 +127,7 @@ $breakpoints:(
 
         &:nth-of-type(1){
           top: 10px;
-          transform: rotate(30deg);
+          transform: rotate(45deg);
         }
 
         &:nth-of-type(2){
@@ -125,7 +136,7 @@ $breakpoints:(
 
          &:nth-of-type(3){
           top: 10px;
-          transform: rotate(-30deg);
+          transform: rotate(-45deg);
          }
       }
     }
@@ -139,6 +150,7 @@ $breakpoints:(
    height: 2px;
    border-radius: 6px;
    background: $color-key1;
+   transition: transform 0.3s linear, top 0.3s linear;
 
    &:nth-of-type(2){
     top: 8px;
@@ -148,14 +160,55 @@ $breakpoints:(
    }
   }
 
+    // ドロワー
+    .drawer-content{
+      position: fixed;
+      width: 270px;
+      height: 618px;
+      top: 60px;
+      right: 0;
+      background: #3EA1D1;
+      z-index: 50;
+      transform: translateX(100%);
+      transition: transform 0.3s linear;
+      overflow-x: hidden;
+
+      &.is-checked{
+        transform: translateX(0);
+      }
+    }
+
+    .drawer-content__menu{
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding-top: 40px;
+      padding-right: 15px;
+    }
+
+    .drawer-content__link{
+      color: #FFF;
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+
   .mv{
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    padding-top: 60px;
 
     @include mq(pc){
+      padding-top: 70px;
       padding-right: 40px;
       padding-left: 0;
     }
+  }
+
+  .mv__inner{
+    
   }
 
   .mv__content{
@@ -191,7 +244,7 @@ $breakpoints:(
     }
   }
 
-  .mv__title{
+  .mv__main{
     text-align: left;
     margin-top: 30px;
     font-size: 26px;
@@ -207,15 +260,14 @@ $breakpoints:(
     font-weight: 300;
   }
 
+
   // conceptセクション
 
   .concept{
-    padding-top:80px;
-    padding-bottom: 85px;
+    padding-top: 85px;
 
     @include mq(pc){
-      padding-top: 144px;
-      padding-bottom: 145px;
+      padding-top: 145px;
     }
   }
 
@@ -238,12 +290,12 @@ $breakpoints:(
   .title{
       font-size: 30px;
       position: relative;
-      padding-bottom: 15px;
+      padding-bottom: 14px;
       text-align: center;
       font-weight: 600;
       @include mq(pc){
         font-size: 40px;
-        padding-bottom: 9px;
+        padding-bottom: 7px;
       }
 
   &::before {
@@ -263,7 +315,7 @@ $breakpoints:(
     text-align: center;
     @include mq(pc){
       text-align: left;
-      margin-top: 68px;
+      margin-top: 70px;
     }
 
     img{
@@ -304,9 +356,11 @@ $breakpoints:(
 
 // featureセクション
 .feature{
-  padding-bottom: 96px;
+  padding-top: 83px;
+  padding-bottom: 98px;
 
   @include mq(pc){
+    padding-top: 144px;
     padding-bottom: 160px;
   }
 }
@@ -332,7 +386,7 @@ $breakpoints:(
   flex-direction: column;
   gap: 50px;
   text-align: center;
-  margin-top: 46px;
+  margin-top: 50px;
 
   @include mq(pc){
     margin-top: 68px;
@@ -355,8 +409,8 @@ $breakpoints:(
 .feature__text{
   text-align: center;
   font-weight: 600;
-  padding-top: 26px;
-  padding-bottom: 26px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 // middleセクション
@@ -413,12 +467,10 @@ $breakpoints:(
 // productsセクション
 
 .products{
-    padding-top: 85px;
-    padding-bottom: 85px;
+  padding-top: 87px;;
 
     @include mq(pc){
-        padding-top: 144px;
-        padding-bottom: 144px;
+      padding-top: 149px
     }
 }
 
@@ -426,7 +478,7 @@ $breakpoints:(
     padding: 48px 56px 42px 56px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 41px;
 
     @include mq(pc){
         padding: 66px 170px 44px 170px;
@@ -488,14 +540,22 @@ $breakpoints:(
             font-size: 14px;
             font-weight: 300;
             border: 1px solid currentColor;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+            &:hover {
+              background-color: $color-key1;
+              color: #fff;
+            }
         }
 }
 
 .news{
+    padding-top: 85px;
     padding-bottom: 96px;
 
     @include mq(pc){
-        padding-bottom: 160px;
+      padding-top: 144px;
+      padding-bottom: 160px;
     }
 }
 
@@ -573,11 +633,11 @@ $breakpoints:(
 // consept2セクション
 
 .concept2{
-    padding-bottom: 97px;
+  padding-bottom: 96px;
 
 
     @include mq(pc){
-        margin-bottom: 75px;
+        margin-bottom: 65px;
     }
 }
 
@@ -633,21 +693,21 @@ $breakpoints:(
 
 .contact{
   padding-top: 46px;
-  padding-bottom: 56px;
+  padding-bottom: 40px;
   background: url(../img/contact_bg-sp.png) no-repeat center center / cover;
 
   @include mq(pc){
     background: url(../img/contact_bg.png) no-repeat center center / cover;
-    padding-top: 67px;
-    padding-bottom: 80px;
+    padding-top: 65px;
+    padding-bottom: 63px;
   }
 }
 
 .contact__form{
-  margin-top: 56px;
+  margin-top: 50px;
 
   @include mq(pc){
-    margin-top: 66px;
+    margin-top: 70px;
   }
 }
 
@@ -712,7 +772,7 @@ $breakpoints:(
 
 .contact__head{
   color: $color-key1;
-  padding-bottom: 7px;
+  padding-bottom: 13px;
 
   @include mq(pc){
     padding-bottom: 7px;
@@ -805,6 +865,7 @@ $breakpoints:(
 
 .contact__submit{
   margin-top: 23px;
+  padding-bottom: 17px;
 
   @include mq(pc){
     margin-top: 44px;
@@ -874,4 +935,72 @@ $breakpoints:(
 
 }
 
+.footer{
+  padding-top: 35px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: #F7F7F7;
 
+  @include mq(pc){
+  }
+
+  img{
+    width: 120px;
+    height: 22px;
+  }
+}
+
+
+.footer__text{
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 300;
+
+  @include mq(pc){
+    margin-top: 20px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
+}
+
+.footer__privacy{
+}
+
+.footer__description{
+  margin-top: 10px;
+
+  @include mq(pc){
+    margin-top: 0;
+  }
+}
+
+.footer__sns{
+  margin-top: 14px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+
+  @include mq(pc){
+    margin-top: 17px;
+  }
+}
+
+.footer__icon{
+  width: 18px;
+  height: 19.2px;
+}
+
+.footer__small{
+  margin-top: 26px;
+
+  @include mq(pc){
+    margin-top: 30px
+  }
+}
+
+.footer__copyright{
+  color: #888;
+  font-size: 12px;
+}

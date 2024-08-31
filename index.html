@@ -36,15 +36,25 @@
         </div>
     </header>
 
+    <div id="js-drawer-content" class="drawer-content">
+        <nav class="drawer-content__menu">
+            <a href="#Concept" class="drawer-content__link">Concept</a>
+            <a href="#Feature" class="drawer-content__link">Feature</a>
+            <a href="#Products" class="drawer-content__link">Products</a>
+            <a href="#News" class="drawer-content__link">News</a>
+            <a href="#Contact" class="drawer-content__link">Contact</a>
+        </nav>
+    </div>
+
     <section class="mv">
-        <div class="mv__inner">
+        <div class="mv__inner inner">
             <div class="mv__content">
                 <div class="mv__image">
                     <img src="./img/top.png" class="hidden-pc" alt="">
                     <img src="./img/top1.png" class="hidden-sp" alt="">
                 </div>
                 <div class="mv__text">
-                    <div class="mv__title">“可愛い” で<br class="hidden-sp"/>地球を守る！</div>
+                    <div class="mv__main">“可愛い” で<br class="hidden-sp"/>地球を守る！</div>
                     <div class="mv__sub">
                     <p class="mv__subtitle">海洋マイクロプラスチックを素材とした</p>
                     <p class="mv__subtitle">ハンドメイドアクセサリー「sobolon」</p>
@@ -54,8 +64,8 @@
         </div>
     </section>
 
-    <section class="concept">
-        <div class="concept__inner">
+    <section id="Concept" class="concept">
+        <div class="concept__inner inner">
             <div class="concept__title title">Concept</div>
                 <div class="concept__content">
                     <div class="concept__image"><img src="./img/concept1.png" alt=""></div>
@@ -63,12 +73,12 @@
                         <div class="concept__main">可愛くてステキなのは当たり前。 <br/>地球にやさしくあるのも当たり前。</div>
                         <div class="concept__subtitle">「sobolon」は、海洋汚染の要因であるマイクロプラスチックを回収し、それらを素材としたハンドメイドアクセサリーを製作しているブランドです。</div>
                     </div>
-            </div>
+                </div>
          </div>
     </section>
 
-    <section class="feature">
-        <div class="feature__inner">
+    <section id="Feature" class="feature">
+        <div class="feature__inner inner">
             <div class="feature__contact">
                 <div class="feature__title title">Feature</div>
                 <div class="feature__boxes">
@@ -109,7 +119,7 @@
         </div>
     </section>
 
-    <section class="products">
+    <section id="Products" class="products">
         <div class="products__inner">
             <div class="products__content">
                 <div class="products__title title">Products</div>
@@ -144,7 +154,7 @@
         </div>
     </section>
 
-    <section class="news">
+    <section id="News" class="news">
         <div class="news__inner">
             <div class="news__content">
                 <div class="news__title title">News</div>
@@ -182,7 +192,7 @@
     </section>
 
     <section class="concept2">
-        <div class="concept__inner">
+        <div class="concept__inner inner">
                 <div class="concept2__content">
                     <div class="concept2__image"><img src="./img/concept-2.png" alt=""></div>
                     <div class="concept2__text">
@@ -195,8 +205,8 @@
     </section>
 
 
-   <section class="contact">
-    <div class="contact__inner">
+   <section id="Contact" class="contact">
+    <div class="contact__inner inner">
         <h2 class="title contact__head">Contact</h2>
         <form action="" class="contact__form">
             <p class="contact__text"><span class="absolute">＊</span>は入力必須項目です</p>
@@ -249,12 +259,14 @@
             </div>
             
             <div class="contact__footer">
+                <div class="contact__inner inner">
                 <div class="contact__privacy">
                     <label class="form-checkbox">
                         <input type="checkbox" name="your-privacy" id="" class="form-checkbox__inner">
                         <span class="form-checkbox__text"> <a href="" target="_blank">プライバシーポリシー</a>に同意します。</span>
                     </label>
                 </div>
+            </div>
             </div>
 
             <div class="contact__submit blue-button">
@@ -263,6 +275,29 @@
         </form>
     </div>
    </section>
+
+   <footer class="footer">
+    <div class="footer__inner inner">
+        <div class="footer__title"><img src="./img/solobon.png" alt=""></div>
+        <div class="footer__content">
+            <div class="footer__text">
+            <div class="footer__privacy">プライバシーポリシー</div>
+            <div class="footer__description">特定商取引法に基づく表記</div>
+            </div>
+            <div class="footer__sns">
+                <div class="footer__icon"><img src="./img/twitter 1.png" alt=""></div>
+                <div class="footer__icon"><img src="./img/instagram 1.png" alt=""></div>
+                <div class="footer__icon"><img src="./img/line 1.png" alt=""></div>
+            </div>
+            <div class="footer__small">
+                <small class="footer__copyright">
+                    © 2020 sobolon All rights reserved
+                    </small>
+            </div>
+        </div>
+
+    </div>
+  </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
