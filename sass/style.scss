@@ -6,7 +6,7 @@ $font-size-base:16px;
 $line-height-base:1.7;
 
 $color-base:#111;
-$background-color-base:#FAFAFA;
+$background-color-base:#FFF;
 $color-key1:#3EA1D1;
 $width-inner: 1140px;
 
@@ -225,10 +225,10 @@ $breakpoints:(
     }
 
     img{
-      height: 414px;
+      width: 100%;
 
        @include mq(pc){
-        height: 660px;
+        max-width: 990px;
 
        }
     }

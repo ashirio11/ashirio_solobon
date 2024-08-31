@@ -16,7 +16,7 @@
 body {
   font-size: 16px;
   color: #111;
-  background-color: #FAFAFA;
+  background-color: #FFF;
   font-family: "Noto Serif JP", serif;
   line-height: 1.7;
   overflow-x: hidden;
@@ -210,11 +210,11 @@ body {
   }
 }
 .mv__image img {
-  height: 414px;
+  width: 100%;
 }
 @media screen and (min-width:768px) {
   .mv__image img {
-    height: 660px;
+    max-width: 990px;
   }
 }
 
