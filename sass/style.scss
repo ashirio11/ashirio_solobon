@@ -193,22 +193,25 @@ $breakpoints:(
       font-weight: 300;
     }
 
+    .inner{
+      @include mq(pc){
+        min-width: calc(1200 / 1280 * 100);
+      }
+    }
+
 
   .mv{
-    width: 100%;
+    min-width: 375px;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 60px;
 
     @include mq(pc){
+      min-width: 1280px;
       padding-top: 70px;
       padding-right: 40px;
       padding-left: 0;
     }
-  }
-
-  .mv__inner{
-    
   }
 
   .mv__content{
@@ -265,9 +268,11 @@ $breakpoints:(
 
   .concept{
     padding-top: 85px;
+    min-width: 375px;
 
     @include mq(pc){
       padding-top: 145px;
+      min-width: 1280px;
     }
   }
 
@@ -319,10 +324,10 @@ $breakpoints:(
     }
 
     img{
-      width: 345px;
+      width: 100%;
 
       @include mq(pc){
-        width: 600px;
+        width: calc(600px / 1200px * 100%) ;
       }
     }
 
@@ -358,10 +363,12 @@ $breakpoints:(
 .feature{
   padding-top: 83px;
   padding-bottom: 98px;
+  min-width: 375px;
 
   @include mq(pc){
     padding-top: 144px;
     padding-bottom: 160px;
+    min-width: 1280px;
   }
 }
 
@@ -402,7 +409,7 @@ $breakpoints:(
 .feature__img{
 
   img{
-    width: 100%;
+      width: 100%;
   }
 }
 
@@ -417,16 +424,16 @@ $breakpoints:(
 
 .middle{
     position: relative;
+    min-width: 375px;
+    @include mq(pc){
+      min-width: 1280px;
+    }
 }
 
 .middle__image{
     img{
-        height: 490px;
-
-        @include mq(pc){
-            height: 478px;
-        }
-    }
+        width: 100%;
+}
 }
 
 .middle__text{
@@ -468,9 +475,11 @@ $breakpoints:(
 
 .products{
   padding-top: 87px;;
+  min-width: 375px;
 
     @include mq(pc){
-      padding-top: 149px
+      padding-top: 149px;
+      min-width : 1280px;
     }
 }
 
@@ -478,6 +487,7 @@ $breakpoints:(
     padding: 48px 56px 42px 56px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 41px;
 
     @include mq(pc){
@@ -487,11 +497,15 @@ $breakpoints:(
     }
 }
 
+.products__box{
+  width: 100%;
+}
+
 .products__text{
-    width: 263px;
+    width: calc(263 / (375 - 112) * 100%);
 
     @include mq(pc){
-        width: 260px;
+        width: 100%;
     }
 }
 
@@ -510,10 +524,10 @@ $breakpoints:(
 .products__image{
 
     img{
-        width: 263px;
+        width: calc(263 / (375 - 112) * 100%);
 
         @include mq(pc){
-            width: 300px;
+            width: 100%;
         }
     }
 }
@@ -552,10 +566,12 @@ $breakpoints:(
 .news{
     padding-top: 85px;
     padding-bottom: 96px;
+    min-width: 375px;
 
     @include mq(pc){
       padding-top: 144px;
       padding-bottom: 160px;
+      min-width: 1280px;
     }
 }
 
@@ -585,22 +601,18 @@ $breakpoints:(
 .news__card-image{
 
     img{
-        height: 212.31px;
-
-        @include mq(pc){
-            height: 160px;
-        }
+        width: 100%;
     }
 }
 
 .news__card-text{
     margin-top: 16px;
     text-align: left;
-    width: 345px;
+    width: 100%;
 
     @include mq(pc){
         margin-top: 0;
-        width: 736px;
+        width: 100%;
     }
 }
 
@@ -634,10 +646,12 @@ $breakpoints:(
 
 .concept2{
   padding-bottom: 96px;
+  min-width: 375px;
 
 
     @include mq(pc){
         margin-bottom: 65px;
+        min-width: 1280px;
     }
 }
 
@@ -654,10 +668,11 @@ $breakpoints:(
     }
 
     img{
-       height: 230px;
-        @include mq(pc){
-            height: 400px;
-        }
+       width: 100%;
+
+       @include mq(pc){
+        width: calc(600px / 1200px * 100%) ;
+       }
     }
 }
 
@@ -695,11 +710,13 @@ $breakpoints:(
   padding-top: 46px;
   padding-bottom: 40px;
   background: url(../img/contact_bg-sp.png) no-repeat center center / cover;
+  min-width: 375px;
 
   @include mq(pc){
     background: url(../img/contact_bg.png) no-repeat center center / cover;
     padding-top: 65px;
     padding-bottom: 63px;
+    min-width: 1280px;
   }
 }
 
